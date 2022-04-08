@@ -1,18 +1,18 @@
-var textarea = document.getElementById("text");
+var text = document.getElementById("nas1");
 var select = document.getElementById("select");
-var result = document.getElementById("result");
-textarea.addEventListener("input",()=>{
-    make_result  () ;
+var resultatf = document.getElementById("result_final");
+text.addEventListener("input",()=>{
+    get_code () ;
 })
 select.addEventListener("change",()=>{
-    make_result();
+    get_code ();
 })
- function make_result (){
+ function get_code (){
       if(select.value=="decode")
     {
-        result.value = atob(textarea.value);
+        resultatf.value = atob(text.value);
     }
     else if(select.value=="encode"){
-        result.value = btoa(textarea.value) ;
+        resultatf.value = btoa(text.value) ;
     }
  }
